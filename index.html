@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SABR Mikromoliya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <div class="logo">SABR<span>Mikro</span></div>
+        <ul class="nav-links">
+          <li><a href="#services">Xizmatlar</a></li>
+          <li><a href="#process">Jarayon</a></li>
+          <li><a href="#impact">Ta'sir</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a class="nav-cta" href="#apply">Ariza qoldiring</a>
+      </nav>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="eyebrow">Yangi avlod mikromoliya</span>
+          <h1>Kichik biznesingiz uchun tez va adolatli mikroqarzlar</h1>
+          <p>
+            SABR kichik tadbirkorlar, fermerlar va xizmat ko'rsatish sohasi
+            vakillarini qo'llab-quvvatlaydi. Raqamli boshqaruv, shaffof
+            shartlar va hamkorlikka asoslangan yondashuv orqali o'sish
+            imkoniyatini yarating.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#apply">3 daqiqada onlayn ariza</a>
+            <a class="secondary-btn" href="#learn">Platformani ko'ring</a>
+          </div>
+          <div class="hero-metrics">
+            <div>
+              <h3>12 500+</h3>
+              <p>moliyalangan loyihalar</p>
+            </div>
+            <div>
+              <h3>48 soat</h3>
+              <p>ichida dastlabki javob</p>
+            </div>
+            <div>
+              <h3>96%</h3>
+              <p>mijozlarimiz tavsiya qiladi</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="card-header">
+            <span>Ariza oynasi</span>
+            <p>Shaxsiy mikroqarz kalkulyatori</p>
+          </div>
+          <form class="card-form" id="loan-form">
+            <label for="amount">Talab qilinayotgan summa</label>
+            <div class="input-group">
+              <span>so'm</span>
+              <input type="number" id="amount" value="50000000" min="1000000" step="1000000" />
+            </div>
+            <label for="term">Muddat (oy)</label>
+            <input type="range" id="term" min="3" max="36" value="12" />
+            <div class="term-output"><span id="term-value">12</span> oy</div>
+            <label for="purpose">Maqsad</label>
+            <select id="purpose">
+              <option>Oborotni ko'paytirish</option>
+              <option>Asbob-uskunalar xaridi</option>
+              <option>Fermer xo'jaligini kengaytirish</option>
+              <option>Franchayzing ochish</option>
+            </select>
+            <div class="card-summary">
+              <div>
+                <span>Oylik to'lov</span>
+                <strong id="monthly">6 250 000 so'm</strong>
+              </div>
+              <div>
+                <span>Yillik xizmat</span>
+                <strong>12%</strong>
+              </div>
+            </div>
+            <button type="submit" class="primary-btn full">Ariza topshirish</button>
+            <p class="fine-print">Qaror kredit qo'mitasi tomonidan tasdiqlanadi.</p>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="partners" id="learn">
+        <p class="eyebrow">Hamkorlarimiz bizga ishonadi</p>
+        <div class="partners-logos">
+          <span>PayTech Alliance</span>
+          <span>AgroBoost</span>
+          <span>WomenInBiz</span>
+          <span>UzStart</span>
+          <span>StepInvest</span>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="section-header">
+          <h2>Biznesingizni tezda o'stirishga yordam beramiz</h2>
+          <p>
+            SABR platformasi orqali mikroqarz ajratish, monitoring va qayta
+            moliyalashtirish jarayonlari to'liq raqamlashtirilgan.
+          </p>
+        </div>
+        <div class="grid three">
+          <article class="feature">
+            <div class="icon">⚡</div>
+            <h3>48 soat ichida qaror</h3>
+            <p>
+              Shaxsiy scoring modeli va avtomatlashtirilgan tekshiruvlar yordamida
+              tezkor javob beramiz.
+            </p>
+          </article>
+          <article class="feature">
+            <div class="icon">🔒</div>
+            <h3>Shaffof shartlar</h3>
+            <p>
+              Yashirin to'lovlar yo'q. Foiz stavkalari va jadval to'liq
+              shaffof tarzda taqdim etiladi.
+            </p>
+          </article>
+          <article class="feature">
+            <div class="icon">🤝</div>
+            <h3>Mas'uliyatli hamkorlik</h3>
+            <p>
+              Mentorlik, moliyaviy savodxonlik va konsultatsiyalar bilan
+              tadbirkorlarni qo'llab-quvvatlaymiz.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt" id="process">
+        <div class="section-header">
+          <h2>Mikroqarz jarayoni 4 bosqichda</h2>
+        </div>
+        <div class="timeline">
+          <div class="step">
+            <span class="step-number">1</span>
+            <div>
+              <h3>Onlayn ariza</h3>
+              <p>Ma'lumotlaringizni yuboring va dastlabki javobni kuting.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-number">2</span>
+            <div>
+              <h3>Baholash</h3>
+              <p>Biznes va kredit tarixini chuqur tahlil qilamiz.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-number">3</span>
+            <div>
+              <h3>Shartnoma</h3>
+              <p>Shaffof shartlar bilan shartnoma imzolaymiz.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-number">4</span>
+            <div>
+              <h3>Mablag' ajratish</h3>
+              <p>Qaror tasdiqlangach 24 soat ichida mablag' ajratiladi.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="impact">
+        <div class="section-header">
+          <h2>Mahalliy iqtisodiyotga ta'sirimiz</h2>
+          <p>
+            Har bir qarz ortida yangi ish o'rinlari, kuchli jamiyat va barqaror
+            o'sish turibdi.
+          </p>
+        </div>
+        <div class="grid two">
+          <article class="impact-card">
+            <h3>Ayollar tadbirkorligiga e'tibor</h3>
+            <p>
+              SABR orqali moliyalashtirilgan loyihalarning 52% ayollar tomonidan
+              boshqariladi. Biz gender tengligini qo'llab-quvvatlaymiz.
+            </p>
+          </article>
+          <article class="impact-card">
+            <h3>Qishloq hududlaridagi farovonlik</h3>
+            <p>
+              Fermer va agro-loyihalarga moslashtirilgan mahsulotlarimiz 30 ta
+              viloyatda qo'llab-quvvatlanmoqda.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section testimonials">
+        <div class="section-header">
+          <h2>Mijozlarimiz fikri</h2>
+        </div>
+        <div class="grid three">
+          <blockquote>
+            <p>
+              "SABR jamoasi tufayli yangi qahvaxonamni ochdim. Tezkor kredit va
+              mentorlik dasturi menga yordam berdi."
+            </p>
+            <cite>Aziza, kafe egasi</cite>
+          </blockquote>
+          <blockquote>
+            <p>
+              "Moliyaviy hisobotlar bilan ishlash ancha osonlashdi. Platforma
+              juda qulay va shaffof."
+            </p>
+            <cite>Ulug'bek, servis markazi</cite>
+          </blockquote>
+          <blockquote>
+            <p>
+              "Fermer xo'jaligimni kengaytirishga ajoyib imkoniyat. Foizlar
+              hamyonbop va xizmat a'lo darajada."
+            </p>
+            <cite>Mukarram, fermer</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="section cta" id="apply">
+        <div class="cta-content">
+          <h2>Keling, birga o'samiz</h2>
+          <p>
+            Qisqa onlayn ariza, shaffof jarayon va sizga mos mikroqarz. SABR bilan
+            biznesingizni keyingi bosqichga olib chiqing.
+          </p>
+        </div>
+        <form class="cta-form">
+          <div class="field">
+            <label for="name">F.I.Sh</label>
+            <input type="text" id="name" placeholder="Ismingiz" required />
+          </div>
+          <div class="field">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" placeholder="(+998)" required />
+          </div>
+          <div class="field">
+            <label for="business">Biznes turi</label>
+            <input type="text" id="business" placeholder="Masalan, servis markazi" />
+          </div>
+          <button type="submit" class="primary-btn">Bog'lanish</button>
+        </form>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="section-header">
+          <h2>Ko'p so'raladigan savollar</h2>
+        </div>
+        <div class="accordion">
+          <details open>
+            <summary>Mikroqarz miqdori qancha bo'lishi mumkin?</summary>
+            <p>
+              20 million so'mdan 500 million so'mgacha bo'lgan mikroqarzlar taqdim
+              etamiz. Har bir ariza individual baholanadi.
+            </p>
+          </details>
+          <details>
+            <summary>Garov talabi bormi?</summary>
+            <p>
+              Biz fleksibil garov siyosatini qo'llaymiz. Ba'zi mahsulotlarimiz
+              garovsiz, ba'zilari esa sug'urta yoki kafillik orqali ta'minlanadi.
+            </p>
+          </details>
+          <details>
+            <summary>Foiz stavkalari qanday?</summary>
+            <p>
+              Yillik xizmat haqi 12% dan boshlanadi. Qarz muddatiga va risk
+              profiliga qarab stavka aniqlanadi.
+            </p>
+          </details>
+          <details>
+            <summary>Monitoring qanday amalga oshiriladi?</summary>
+            <p>
+              Platformamizdagi shaxsiy kabinet orqali natijalarni kuzatib boramiz
+              va maslahatchilarimiz bilan muntazam uchrashuvlar o'tkazamiz.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <div class="logo">SABR<span>Mikro</span></div>
+        <p>
+          Sabr Mikromoliya tashkiloti kichik biznes va jamiyatning barqaror
+          rivojlanishiga xizmat qiladi.
+        </p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Manzil</h4>
+          <p>Toshkent shahri, Amir Temur shoh ko'chasi 45A</p>
+        </div>
+        <div>
+          <h4>Aloqa</h4>
+          <a href="tel:+998781234567">+998 78 123 45 67</a>
+          <a href="mailto:info@sabr.uz">info@sabr.uz</a>
+        </div>
+        <div>
+          <h4>Yordam</h4>
+          <a href="#faq">Savollar</a>
+          <a href="#apply">Ariza qoldirish</a>
+          <a href="#services">Xizmatlar</a>
+        </div>
+      </div>
+      <p class="footer-note">© 2024 SABR Mikromoliya. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
