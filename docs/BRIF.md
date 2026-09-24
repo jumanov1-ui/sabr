@@ -1,6 +1,6 @@
 # "Sabr mikromoliya tashkiloti" MCHJ — veb-sayt loyihasi brifi
 
-> Holati: **qoralama (v0.3)**. ❓ belgisi bilan belgilangan joylar tasdiqlanishi kerak.
+> Holati: **qoralama (v0.4)**. ❓ belgisi bilan belgilangan joylar tasdiqlanishi kerak.
 
 ---
 
@@ -10,7 +10,9 @@
 |---|---|
 | **Nomi** | "Sabr mikromoliya tashkiloti" MCHJ |
 | **Faoliyati** | Mikromoliya: jismoniy shaxslarga mikroqarzlar |
-| **Joylashuvi** | Samarqand shahri, bitta ofis (filiallar yo'q) |
+| **Faoliyat boshlangan** | 2007-yil (litsenziyalar Davlat reyestriga 24.08.2007 da kiritilgan) |
+| **Manzil** | 140108, Samarqand shahri, A. Bahodirxon ko'chasi, 2A-uy (bitta ofis, filiallar yo'q) |
+| **Arizalar uchun** | Email: `sabrmikromoliya@gmail.com`, Telegram guruhi: "SABR MMT ARIZALAR" |
 | **Hisob dasturi** | 1C (ofisdagi ichki serverda) |
 | **Domen va hosting** | `sabrmmt.uz` — mavjud |
 | **Sayt tillari** | O'zbek (lotin) — asosiy, rus, ingliz |
@@ -46,7 +48,7 @@ Muddati: **3 oydan 12 oygacha**.
 ### 3.2. Kafillik (ishsizlar uchun)
 | Summa | Yillik stavka | Oylik stavka | Muddat | Talab |
 |---|---|---|---|---|
-| 2 000 000 – 7 000 000 so'm | 72% | 6% | 12 oygacha | 2 ta kafil + sug'urta ❓ (sug'urta xarajatini mijoz to'laydimi?) |
+| 2 000 000 – 7 000 000 so'm | 72% | 6% | 12 oygacha | 2 ta kafil + sug'urta (sug'urta xarajatini **tashkilot to'laydi**) |
 
 ### 3.3. Kafillik (rasmiy ish haqi oluvchilar uchun)
 | Summa | Yillik stavka | Oylik stavka | Muddat | Talab |
@@ -70,7 +72,6 @@ Qo'shimcha xarajatlar (mijoz hisobidan): **notarius** va **sug'urta**.
   notarius va sug'urta xarajati bor. Bu saytda asosiy afzallik sifatida ko'rsatiladi.
 - **Minimal hujjatlar** — bu ham afzallik sifatida ko'rsatiladi. Ariza uchun **faqat pasport** kifoya;
   ko'rib chiqish jarayonida qo'shimcha hujjatlar so'ralishi mumkin (saytda shunday yoziladi).
-- ❓ Foiz oyma-oy hisoblanadimi yoki kunlik (oydagi kunlar soniga qarab)?
 
 ### 3.6. Kalkulyator hisob-kitobi (tekshirish uchun namuna)
 
@@ -85,7 +86,7 @@ Guruh kafilligi, 1-marta: **7 000 000 so'm, 12 oy, oyiga 6,1%**.
 | **Jami** | **7 000 000** | **2 775 500** | **9 775 500** | |
 
 Formula: `foiz = qolgan qarz × oylik stavka`, `asosiy qarz = summa ÷ muddat`.
-❓ Shu summalar 1C'dagi to'lov jadvali bilan bir xil chiqishini tekshirib bering.
+✅ 1C'dagi to'lov jadvali bilan mos keladi (tasdiqlangan).
 
 ## 4. Sayt tuzilmasi (1-bosqich)
 
@@ -116,8 +117,8 @@ Bosh sahifa
 shaxsiy ma'lumotlarni qayta ishlashga rozilik (majburiy belgi).
 
 **Ariza qayerga boradi (bir vaqtda uchalasiga):**
-1. **Telegram guruhi** — darhol xabar (bot orqali)
-2. **Email** — ❓ qaysi manzilga
+1. **Telegram guruhi "SABR MMT ARIZALAR"** — darhol xabar (bot guruhga qo'shiladi)
+2. **Email** — `sabrmikromoliya@gmail.com`
 3. **Admin panel** — barcha arizalar ro'yxati, holati (yangi / qo'ng'iroq qilindi / rad etildi / berildi), mas'ul xodim
 
 **Spamdan himoya:** telefon raqami formati tekshiruvi, bir raqamdan cheklangan miqdor, ko'rinmas captcha.
@@ -155,6 +156,24 @@ lekin sifatli ko'rinishi uchun vektor fayl kerak. Bo'lmasa, qayta chizib olamiz.
 
 Barcha hujjatlar mavjud — PDF shaklida taqdim etiladi.
 
+### Litsenziya ([`legal/litsenziya-3.pdf`](legal/litsenziya-3.pdf))
+| | |
+|---|---|
+| **Turi** | Mikrokredit tashkiloti faoliyatini amalga oshirish uchun litsenziya |
+| **Raqami** | № 3 (Seriya AA № 000118) |
+| **Bergan organ** | O'zbekiston Respublikasi Markaziy banki |
+| **Asos** | Markaziy bank Boshqaruvining 10.09.2020 yildagi 21/8-sonli qarori |
+| **Reyestrga kiritilgan** | 24.08.2007, № 3 |
+| **Amal qilish muddati** | Muddatsiz |
+
+Saytda: futerda litsenziya raqami va sanasi, "Biz haqimizda" sahifasida PDF'ni ko'rish/yuklab olish.
+
+**Muhim afzallik:** tashkilot **2007-yildan beri** faoliyat yuritadi va reyestrda **3-raqamli** litsenziyaga
+ega — bu saytda ishonch uchun eng kuchli dalillardan biri ("18 yildan ortiq tajriba").
+
+❓ Litsenziyada nom **"Sabr mikrokredit tashkiloti" MChJ**, logotipda esa **"mikromoliya tashkiloti"**.
+Saytda qaysi rasmiy nom yoziladi? (Agar nom o'zgartirilgan bo'lsa, yangi guvohnoma/litsenziya nusxasi kerak.)
+
 - Litsenziya raqami va sanasi (Markaziy bank) — saytda ko'rinarli joyda
 - Yillik foiz stavkalari va barcha to'lovlarning oshkor qilinishi
 - Tashkilot rekvizitlari (STIR, manzil)
@@ -176,13 +195,16 @@ Oqibatlari:
 
 ## 10. Hali kerak bo'lgan ma'lumotlar (nazorat ro'yxati)
 
-- [ ] Litsenziya va yuridik hujjatlar (PDF) — va'da qilingan
-- [ ] Ofis manzili, mo'ljal, ish vaqti, telefonlar, Telegram
+- [x] Litsenziya (PDF) — olindi
+- [ ] Rasmiy nom: "mikrokredit" yoki "mikromoliya" tashkiloti?
+- [ ] STIR va boshqa rekvizitlar
+- [x] Manzil: Samarqand sh., A. Bahodirxon ko'chasi, 2A
+- [ ] Mo'ljal, ish vaqti, telefon raqamlari, mijozlar uchun Telegram
 - [x] Muddatlar: guruh kafilligi 3–12 oy, avto garov 6–36 oy
 - [x] To'lov turi — differensial; qo'shimcha to'lovlar — faqat garovda notarius va sug'urta
 - [x] Hujjatlar: boshlanishida pasport, keyin qo'shimcha so'ralishi mumkin
-- [ ] Namunaviy to'lov jadvalini 1C bilan solishtirish (3.6-bo'lim)
-- [ ] Arizalar uchun email va Telegram guruhi
+- [x] Namunaviy to'lov jadvali 1C bilan mos
+- [x] Arizalar: `sabrmikromoliya@gmail.com` + Telegram "SABR MMT ARIZALAR"
 - [ ] Logotipning vektor varianti
 - [ ] Ofis, jamoa rasmlari (professional suratga olish tavsiya etiladi)
 - [ ] Tashkilot tarixi, qisqa ma'lumot, raqamlar (yillar, mijozlar soni)
