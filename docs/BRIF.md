@@ -1,6 +1,6 @@
 # "Sabr mikromoliya tashkiloti" MCHJ — veb-sayt loyihasi brifi
 
-> Holati: **qoralama (v0.4)**. ❓ belgisi bilan belgilangan joylar tasdiqlanishi kerak.
+> Holati: **qoralama (v0.5)**. ❓ belgisi bilan belgilangan joylar tasdiqlanishi kerak.
 
 ---
 
@@ -8,7 +8,11 @@
 
 | | |
 |---|---|
-| **Nomi** | "Sabr mikromoliya tashkiloti" MCHJ |
+| **Rasmiy nomi** | "SABR MIKROMOLIYA TASHKILOTI" MChJ |
+| **STIR** | 300066954 |
+| **Telefon** | +998 66 233-71-87 |
+| **Ish vaqti** | Dushanba–juma, 09:00–18:00 (tushlik 13:00–14:00) |
+| **Telegram kanal** | "SABR MIKROKREDIT TASHKILOTI" |
 | **Faoliyati** | Mikromoliya: jismoniy shaxslarga mikroqarzlar |
 | **Faoliyat boshlangan** | 2007-yil (litsenziyalar Davlat reyestriga 24.08.2007 da kiritilgan) |
 | **Manzil** | 140108, Samarqand shahri, A. Bahodirxon ko'chasi, 2A-uy (bitta ofis, filiallar yo'q) |
@@ -171,8 +175,8 @@ Saytda: futerda litsenziya raqami va sanasi, "Biz haqimizda" sahifasida PDF'ni k
 **Muhim afzallik:** tashkilot **2007-yildan beri** faoliyat yuritadi va reyestrda **3-raqamli** litsenziyaga
 ega — bu saytda ishonch uchun eng kuchli dalillardan biri ("18 yildan ortiq tajriba").
 
-❓ Litsenziyada nom **"Sabr mikrokredit tashkiloti" MChJ**, logotipda esa **"mikromoliya tashkiloti"**.
-Saytda qaysi rasmiy nom yoziladi? (Agar nom o'zgartirilgan bo'lsa, yangi guvohnoma/litsenziya nusxasi kerak.)
+Saytdagi rasmiy nom: **"SABR MIKROMOLIYA TASHKILOTI" MChJ** (litsenziya avvalgi nom — "Sabr mikrokredit
+tashkiloti" — bilan berilgan).
 
 - Litsenziya raqami va sanasi (Markaziy bank) — saytda ko'rinarli joyda
 - Yillik foiz stavkalari va barcha to'lovlarning oshkor qilinishi
@@ -196,10 +200,10 @@ Oqibatlari:
 ## 10. Hali kerak bo'lgan ma'lumotlar (nazorat ro'yxati)
 
 - [x] Litsenziya (PDF) — olindi
-- [ ] Rasmiy nom: "mikrokredit" yoki "mikromoliya" tashkiloti?
-- [ ] STIR va boshqa rekvizitlar
+- [x] Rasmiy nom va STIR
 - [x] Manzil: Samarqand sh., A. Bahodirxon ko'chasi, 2A
-- [ ] Mo'ljal, ish vaqti, telefon raqamlari, mijozlar uchun Telegram
+- [x] Telefon, ish vaqti
+- [ ] Telegram kanal havolasi (t.me/...) va ofis mo'ljali
 - [x] Muddatlar: guruh kafilligi 3–12 oy, avto garov 6–36 oy
 - [x] To'lov turi — differensial; qo'shimcha to'lovlar — faqat garovda notarius va sug'urta
 - [x] Hujjatlar: boshlanishida pasport, keyin qo'shimcha so'ralishi mumkin
