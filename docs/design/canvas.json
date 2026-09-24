@@ -3,7 +3,7 @@
   "attachments": {},
   "boards": {
     "Main.dc.html": {
-      "h": 3380,
+      "h": 4080,
       "is_interactive": true,
       "title": "Bosh sahifa · kompyuter",
       "w": 1440,
@@ -11,7 +11,7 @@
       "y": 0
     },
     "Mobile.dc.html": {
-      "h": 4300,
+      "h": 4560,
       "is_interactive": true,
       "title": "Bosh sahifa · telefon",
       "w": 390,
@@ -31,7 +31,7 @@
     "head": {
       "kind": "title1",
       "maxW": 1910,
-      "text": "sabrmmt.uz · bosh sahifa dizayni v2 (glass)",
+      "text": "sabrmmt.uz · bosh sahifa dizayni v3",
       "w": 240,
       "x": 0,
       "y": -300
