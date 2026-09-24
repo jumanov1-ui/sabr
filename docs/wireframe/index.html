@@ -1,0 +1,428 @@
+<title>Sabr sayt wireframe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#F4F6FA; --sheet:#FFFFFF; --ink:#1B2233; --muted:#5D6678; --line:#C8CEDA; --fill:#E4E8F0; --fill-2:#D3D9E4;
+  --note:#2448C4; --note-soft:#E3E9FB; --ok:#1F7A4D;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11151E; --sheet:#1A1F2B; --ink:#E6E9F0; --muted:#9AA3B5; --line:#3A4254; --fill:#262D3C; --fill-2:#323A4C;
+    --note:#8FA8FF; --note-soft:#232C4A; --ok:#5CC592; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11151E; --sheet:#1A1F2B; --ink:#E6E9F0; --muted:#9AA3B5; --line:#3A4254; --fill:#262D3C; --fill-2:#323A4C;
+  --note:#8FA8FF; --note-soft:#232C4A; --ok:#5CC592; color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--note)}
+
+/* header */
+.top{padding-block:40px 24px;display:grid;gap:12px;max-width:68ch}
+.top h1{font-size:clamp(26px,4vw,36px);font-weight:700;letter-spacing:-.01em}
+.top p{color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--muted);margin-top:4px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.jump{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding-block:10px}
+.jump a{font-family:var(--mono);font-size:13px;color:var(--ink);text-decoration:none;padding:6px 12px;border-radius:6px;white-space:nowrap}
+.jump a:hover,.jump a:focus-visible{background:var(--fill);outline:none}
+
+/* screen section */
+.screen{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:40px;padding-block:48px;border-bottom:1px solid var(--line);align-items:start}
+.screen-head{grid-column:1/-1;display:grid;gap:6px}
+.screen-head h2{font-size:24px}
+.screen-head p{color:var(--muted);max-width:68ch}
+@media (max-width:820px){.screen{grid-template-columns:1fr}}
+
+/* phone frame */
+.phone{width:100%;max-width:380px;background:var(--sheet);border:2px solid var(--ink);border-radius:28px;padding:10px;position:relative}
+.phone-in{border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.blk{padding:16px 40px 16px 16px;border-bottom:1px dashed var(--line);position:relative;display:grid;gap:10px}
+.blk:last-child{border-bottom:0}
+.mk{position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:50%;background:var(--note);color:var(--sheet);font:500 12px/22px var(--mono);text-align:center}
+
+/* wireframe primitives */
+.bar{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.06em}
+.logo i{width:28px;height:28px;border-radius:50%;background:var(--fill-2);display:block}
+.lang{font:500 11px var(--mono);display:flex;gap:2px}
+.lang b{padding:2px 5px;border:1px solid var(--line);border-radius:4px;font-weight:500}
+.lang b:first-child{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.img{background:var(--fill);border:1px solid var(--line);border-radius:8px;min-height:120px;display:grid;place-items:center;font:12px var(--mono);color:var(--muted);text-align:center;padding:8px}
+.h{font-weight:700;font-size:20px;line-height:1.25}
+.s{color:var(--muted);font-size:14px}
+.btn{display:block;width:100%;text-align:center;padding:11px;border-radius:8px;border:2px solid var(--ink);font-weight:600;font-size:14px;background:transparent;color:var(--ink);font-family:inherit;cursor:pointer}
+.btn.pri{background:var(--ink);color:var(--sheet)}
+.btn:focus-visible{outline:3px solid var(--note);outline-offset:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;padding:4px 8px;border-radius:999px;background:var(--fill);border:1px solid var(--line)}
+.card{border:1px solid var(--line);border-radius:10px;padding:12px;display:grid;gap:4px}
+.card .t{font-weight:600;font-size:14px}
+.card .v{font:500 13px var(--mono);font-variant-numeric:tabular-nums}
+.card .a{font-size:12px;color:var(--note);font-weight:600}
+.steps{display:grid;gap:8px}
+.step{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start;font-size:14px}
+.step b{width:26px;height:26px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font:500 12px var(--mono)}
+.faq{border-top:1px solid var(--line);padding-top:8px;font-size:14px;display:flex;justify-content:space-between}
+.foot{background:var(--fill);font-size:12px;color:var(--muted);display:grid;gap:4px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums}
+
+/* forms */
+label{font-size:13px;font-weight:600;display:grid;gap:4px}
+input[type=text],input[type=tel],select,textarea{font:inherit;font-size:14px;padding:9px 10px;border:1.5px solid var(--line);border-radius:8px;background:var(--sheet);color:var(--ink);width:100%}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--note);outline-offset:1px;border-color:var(--note)}
+input[type=range]{width:100%;accent-color:var(--ink)}
+.rng{display:grid;gap:2px}
+.rng .top-l{display:flex;justify-content:space-between;font-size:13px;font-weight:600}
+.rng .top-l span{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.rng .lim{display:flex;justify-content:space-between;font:11px var(--mono);color:var(--muted)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;padding:7px 4px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.seg button:focus-visible{outline:2px solid var(--note);outline-offset:-2px}
+.res{border:2px solid var(--ink);border-radius:10px;padding:12px;display:grid;gap:6px}
+.res .big{font:600 22px var(--mono);font-variant-numeric:tabular-nums}
+.res .ln{display:flex;justify-content:space-between;font-size:13px}
+.res .ln span:last-child{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.sched{overflow-x:auto;max-height:260px;overflow-y:auto;border:1px solid var(--line);border-radius:8px}
+.sched table{border-collapse:collapse;width:100%;font:12px var(--mono);font-variant-numeric:tabular-nums}
+.sched th,.sched td{padding:5px 8px;text-align:right;border-bottom:1px solid var(--fill)}
+.sched th{position:sticky;top:0;background:var(--fill);font-weight:500}
+.chk{display:flex;gap:8px;align-items:flex-start;font-weight:400;font-size:12px}
+.chk input{margin-top:3px}
+.okmsg{border:2px solid var(--ok);color:var(--ok);border-radius:10px;padding:12px;font-size:14px;display:grid;gap:4px}
+
+/* notes */
+.notes{display:grid;gap:14px;counter-reset:n}
+.note{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.note .n{width:24px;height:24px;border-radius:50%;background:var(--note);color:var(--sheet);font:500 12px/24px var(--mono);text-align:center}
+.note h3{font-size:15px;font-weight:600}
+.note p{font-size:14px;color:var(--muted);max-width:60ch}
+.q{display:inline-block;margin-top:4px;font:500 12px var(--mono);background:var(--note-soft);color:var(--note);padding:2px 6px;border-radius:4px}
+.next{padding-block:40px;display:grid;gap:10px;max-width:68ch}
+.next h2{font-size:22px}
+.next ol{margin:0;padding-left:20px;display:grid;gap:6px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">sabrmmt.uz · 1-bosqich · v0.1</div>
+    <h1>Sabr mikromoliya: sayt wireframe'lari</h1>
+    <p>Sahifalarning sxemasi: qaysi blok qayerda turadi va nimani aytadi. Ranglar, shriftlar va rasmlar keyingi bosqichda, dizaynda bo'ladi. Bu yerda faqat tuzilma va matn. Telefon ko'rinishi asos qilib olingan, chunki mijozlarning aksariyati saytga telefondan kiradi.</p>
+    <div class="legend">
+      <span><span class="mk" style="position:static">1</span> izoh raqami, o'ng tomondagi izohga mos</span>
+      <span><span class="q">❓</span> tasdiqlash kerak</span>
+    </div>
+  </header>
+
+  <nav class="jump" aria-label="Sahifalar">
+    <a href="#bosh">Bosh sahifa</a>
+    <a href="#mahsulot">Mahsulot sahifasi</a>
+    <a href="#kalkulyator">Kalkulyator</a>
+    <a href="#ariza">Onlayn ariza</a>
+  </nav>
+
+  <!-- ============ BOSH SAHIFA ============ -->
+  <section class="screen" id="bosh">
+    <div class="screen-head">
+      <div class="eyebrow">Sahifa 1 / 4</div>
+      <h2>Bosh sahifa</h2>
+      <p>Vazifasi: 10 soniyada ishonch uyg'otish va mijozni ariza qoldirishga yoki hisoblab ko'rishga olib borish.</p>
+    </div>
+
+    <div class="phone"><div class="phone-in">
+      <div class="blk"><span class="mk">1</span>
+        <div class="bar"><div class="logo"><i></i>SABR</div><div class="lang"><b>UZ</b><b>RU</b><b>EN</b></div></div>
+        <div class="bar s"><span>+998 66 233-71-87</span><span>☰</span></div>
+      </div>
+      <div class="blk"><span class="mk">2</span>
+        <div class="h">Samarqandda 2007-yildan beri ishonchli mikroqarz</div>
+        <div class="s">Faqat pasport bilan ariza. Komissiya va yashirin to'lovlarsiz.</div>
+        <div class="row2"><span class="btn pri">Ariza qoldirish</span><span class="btn">Hisoblash</span></div>
+      </div>
+      <div class="blk"><span class="mk">3</span>
+        <div class="chips"><span class="chip">Litsenziya № 3</span><span class="chip">18+ yil tajriba</span><span class="chip">Yashirin to'lov yo'q</span><span class="chip">Faqat pasport</span></div>
+      </div>
+      <div class="blk"><span class="mk">4</span>
+        <div class="card"><div class="t">Guruh kafilligi</div><div class="v">15 mln gacha · oyiga 5% dan</div><div class="a">Batafsil →</div></div>
+        <div class="card"><div class="t">Kafillik (ish haqi)</div><div class="v">22 mln gacha · oyiga 5%</div><div class="a">Batafsil →</div></div>
+        <div class="card"><div class="t">Kafillik (ishsizlar)</div><div class="v">7 mln gacha · oyiga 6%</div><div class="a">Batafsil →</div></div>
+        <div class="card"><div class="t">Avtotransport garovi</div><div class="v">50 mln gacha · oyiga 4%</div><div class="a">Batafsil →</div></div>
+      </div>
+      <div class="blk"><span class="mk">5</span>
+        <div class="img">Kalkulyator bloki<br>(4-sahifaga qarang)</div>
+      </div>
+      <div class="blk"><span class="mk">6</span>
+        <div class="t" style="font-weight:700">Qarz qanday olinadi</div>
+        <div class="steps">
+          <div class="step"><b>1</b><span>Saytda ariza qoldirasiz yoki qo'ng'iroq qilasiz</span></div>
+          <div class="step"><b>2</b><span>Mutaxassis siz bilan bog'lanadi va shartlarni tushuntiradi</span></div>
+          <div class="step"><b>3</b><span>Ofisda pasport bilan rasmiylashtirasiz va pulni olasiz</span></div>
+        </div>
+      </div>
+      <div class="blk"><span class="mk">7</span>
+        <div class="t" style="font-weight:700">Savol-javob</div>
+        <div class="faq"><span>Qanday hujjatlar kerak?</span><span>+</span></div>
+        <div class="faq"><span>Qo'shimcha to'lovlar bormi?</span><span>+</span></div>
+        <div class="faq"><span>Qarzni muddatidan oldin yopsa bo'ladimi?</span><span>+</span></div>
+      </div>
+      <div class="blk"><span class="mk">8</span>
+        <div class="img" style="min-height:90px">Xarita: Samarqand sh., A. Bahodirxon ko'chasi, 2A</div>
+        <dl class="kv"><dt>Ish vaqti</dt><dd>Du–Ju 09:00–18:00</dd><dt>Tushlik</dt><dd>13:00–14:00</dd><dt>Telefon</dt><dd>+998 66 233-71-87</dd></dl>
+      </div>
+      <div class="blk foot"><span class="mk">9</span>
+        <strong style="color:var(--ink)">"SABR MIKROMOLIYA TASHKILOTI" MChJ</strong>
+        <span>STIR 300066954</span>
+        <span>Markaziy bank litsenziyasi № 3, 24.08.2007</span>
+        <span>Maxfiylik siyosati · Telegram kanal</span>
+      </div>
+    </div></div>
+
+    <div class="notes">
+      <div class="note"><span class="n">1</span><div><h3>Shapka</h3><p>Logotip, til tanlash (UZ / RU / EN) va telefon raqami doim ko'rinib turadi. Telefonda raqamni bosish qo'ng'iroq qiladi, chunki mijozlarning ko'pchiligi yozishdan ko'ra qo'ng'iroq qilishni afzal ko'radi.</p></div></div>
+      <div class="note"><span class="n">2</span><div><h3>Asosiy taklif</h3><p>Uchta asosiy dalil birinchi ekranda turadi: 2007-yildan beri, faqat pasport, yashirin to'lov yo'q. Ikkita tugma bor: "Ariza qoldirish" (asosiy) va "Hisoblash".</p><span class="q">❓ sarlavha matni</span></div></div>
+      <div class="note"><span class="n">3</span><div><h3>Ishonch belgilari</h3><p>Litsenziya belgisi bosilsa, litsenziya PDF'i ochiladi.</p></div></div>
+      <div class="note"><span class="n">4</span><div><h3>Mahsulotlar</h3><p>To'rtta kartochka. Har birida eng katta summa va eng past oylik stavka ko'rsatiladi. Stavkalar admin paneldan o'zgartiriladi va sayt bo'ylab hamma joyda birdaniga yangilanadi.</p></div></div>
+      <div class="note"><span class="n">5</span><div><h3>Kalkulyator</h3><p>Bosh sahifaning o'zida. Mijoz hisoblagach, natijaning tagida "Shu shartlar bilan ariza qoldirish" tugmasi chiqadi va tanlangan summa bilan muddat formaga o'zi tushadi.</p></div></div>
+      <div class="note"><span class="n">6</span><div><h3>Jarayon</h3><p>Uch qadam. Mijoz nima bo'lishini oldindan biladi, bu esa qo'rquvni kamaytiradi.</p></div></div>
+      <div class="note"><span class="n">7</span><div><h3>Savol-javob</h3><p>Operatorlarga ko'p beriladigan savollar. Ro'yxatini xodimlar bilan birga tuzamiz.</p><span class="q">❓ eng ko'p so'raladigan 6–8 savol</span></div></div>
+      <div class="note"><span class="n">8</span><div><h3>Aloqa va xarita</h3><p>Manzil, ish vaqti va telefon. Xarita bosilsa, Google yoki Yandex xaritada yo'nalish ochiladi.</p><span class="q">❓ mo'ljal (yaqin atrofdagi tanish joy)</span></div></div>
+      <div class="note"><span class="n">9</span><div><h3>Futer</h3><p>Rasmiy nom, STIR va litsenziya raqami har bir sahifada turadi. Bu qonun talabi va ishonch belgisi.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ MAHSULOT ============ -->
+  <section class="screen" id="mahsulot">
+    <div class="screen-head">
+      <div class="eyebrow">Sahifa 2 / 4 · namuna: Avtotransport garovi</div>
+      <h2>Mahsulot sahifasi</h2>
+      <p>To'rtta mahsulot sahifasi ham bir xil tuzilishda bo'ladi. Vazifasi: shartlarni aniq ko'rsatish va savol qoldirmaslik.</p>
+    </div>
+
+    <div class="phone"><div class="phone-in">
+      <div class="blk"><div class="bar"><div class="logo"><i></i>SABR</div><div class="lang"><b>UZ</b><b>RU</b><b>EN</b></div></div></div>
+      <div class="blk"><span class="mk">1</span>
+        <div class="s">Bosh sahifa / Mahsulotlar</div>
+        <div class="h">Avtotransport garovi ostida qarz</div>
+        <div class="s">Avtomobilingiz garovida 50 mln so'mgacha, 36 oygacha.</div>
+      </div>
+      <div class="blk"><span class="mk">2</span>
+        <dl class="kv">
+          <dt>Summa</dt><dd>2 000 000 – 50 000 000 so'm</dd>
+          <dt>Stavka</dt><dd>oyiga 4% (yillik 48%)</dd>
+          <dt>Muddat</dt><dd>6 – 36 oy</dd>
+          <dt>To'lov</dt><dd>differensial, kamayib boradi</dd>
+          <dt>Limit</dt><dd>avtomobil bahosining 50% igacha</dd>
+        </dl>
+      </div>
+      <div class="blk"><span class="mk">3</span>
+        <div class="t" style="font-weight:700">Nima kerak</div>
+        <div class="s">Ariza uchun pasport. Avtomobil hujjatlari va boshqa hujjatlar ko'rib chiqish paytida so'raladi.</div>
+        <div class="t" style="font-weight:700">Qo'shimcha xarajatlar</div>
+        <div class="s">Faqat notarius va sug'urta. Tashkilot komissiya olmaydi.</div>
+      </div>
+      <div class="blk"><span class="mk">4</span>
+        <div class="img" style="min-height:90px">Kalkulyator<br>(avtotransport garovi tanlangan holda)</div>
+      </div>
+      <div class="blk"><span class="mk">5</span>
+        <span class="btn pri">Ariza qoldirish</span>
+        <span class="btn">Qo'ng'iroq qilish</span>
+      </div>
+    </div></div>
+
+    <div class="notes">
+      <div class="note"><span class="n">1</span><div><h3>Sarlavha</h3><p>Mahsulot nomi va bir jumlada asosiy foydasi.</p></div></div>
+      <div class="note"><span class="n">2</span><div><h3>Shartlar jadvali</h3><p>Barcha raqamlar bir joyda. Yillik stavka ham ko'rsatiladi, bu qonun talabi. Guruh kafilligi sahifasida bu yerda 1-, 2- va 3-marta olinadigan qarzlar uchun alohida jadval turadi.</p></div></div>
+      <div class="note"><span class="n">3</span><div><h3>Hujjatlar va xarajatlar</h3><p>Rostgo'y va qisqa matn. "Yashirin to'lov yo'q" va'dasi shu yerda tasdiqlanadi.</p></div></div>
+      <div class="note"><span class="n">4</span><div><h3>Kalkulyator</h3><p>Shu mahsulot oldindan tanlangan holda ochiladi.</p></div></div>
+      <div class="note"><span class="n">5</span><div><h3>Harakat tugmalari</h3><p>Ariza formasiga mahsulot turi avtomatik tushadi.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ KALKULYATOR ============ -->
+  <section class="screen" id="kalkulyator">
+    <div class="screen-head">
+      <div class="eyebrow">Sahifa 3 / 4 · ishlaydigan namuna</div>
+      <h2>Kredit kalkulyatori</h2>
+      <p>Bu blok haqiqatan ishlaydi. Summa va muddatni o'zgartirib ko'ring, hisob differensial usulda, brifdagi shartlar bo'yicha qilinadi. 7 mln, 12 oy, oyiga 6,1% bo'lganda birinchi to'lov 1 010 333 so'm chiqishi kerak. Bu raqam 1C bilan tekshirilgan.</p>
+    </div>
+
+    <div class="phone"><div class="phone-in">
+      <form class="blk" id="calc" onsubmit="return false"><span class="mk">1</span>
+        <label for="c-prod">Mahsulot
+          <select id="c-prod">
+            <option value="guruh">Guruh kafilligi</option>
+            <option value="ishhaqi">Kafillik (ish haqi)</option>
+            <option value="ishsiz">Kafillik (ishsizlar)</option>
+            <option value="avto">Avtotransport garovi</option>
+          </select>
+        </label>
+        <div id="c-times-wrap" style="display:grid;gap:4px">
+          <span style="font-size:13px;font-weight:600">Nechanchi marta olmoqdasiz</span>
+          <div class="seg" role="group" aria-label="Nechanchi marta">
+            <button type="button" id="c-t1" data-t="1" aria-pressed="true">1-marta</button>
+            <button type="button" id="c-t2" data-t="2" aria-pressed="false">2-marta</button>
+            <button type="button" id="c-t3" data-t="3" aria-pressed="false">3-marta</button>
+          </div>
+        </div>
+        <div class="rng">
+          <div class="top-l"><label for="c-sum" style="display:inline">Summa</label><span id="c-sum-v"></span></div>
+          <input type="range" id="c-sum" step="500000">
+          <div class="lim"><span id="c-sum-min"></span><span id="c-sum-max"></span></div>
+        </div>
+        <div class="rng">
+          <div class="top-l"><label for="c-term" style="display:inline">Muddat</label><span id="c-term-v"></span></div>
+          <input type="range" id="c-term" step="1">
+          <div class="lim"><span id="c-term-min"></span><span id="c-term-max"></span></div>
+        </div>
+      </form>
+      <div class="blk"><span class="mk">2</span>
+        <div class="res">
+          <div class="s">Birinchi oylik to'lov</div>
+          <div class="big" id="r-first"></div>
+          <div class="ln"><span>Oxirgi oylik to'lov</span><span id="r-last"></span></div>
+          <div class="ln"><span>Jami foiz</span><span id="r-int"></span></div>
+          <div class="ln"><span>Jami qaytariladi</span><span id="r-tot"></span></div>
+          <div class="ln"><span>Stavka</span><span id="r-rate"></span></div>
+        </div>
+        <span class="btn pri">Shu shartlar bilan ariza qoldirish</span>
+      </div>
+      <div class="blk"><span class="mk">3</span>
+        <div class="t" style="font-weight:700">To'lov jadvali</div>
+        <div class="sched"><table><thead><tr><th>Oy</th><th>Asosiy qarz</th><th>Foiz</th><th>To'lov</th></tr></thead><tbody id="r-rows"></tbody></table></div>
+        <div class="s" style="font-size:12px">Hisob taxminiy. Aniq jadval shartnomada beriladi.</div>
+      </div>
+    </div></div>
+
+    <div class="notes">
+      <div class="note"><span class="n">1</span><div><h3>Kiritish</h3><p>Mahsulot tanlanganda summa va muddat chegaralari o'zi o'zgaradi. "Nechanchi marta" tanlovi faqat guruh kafilligida ko'rinadi va stavkani belgilaydi: 6,1%, 5,5% yoki 5%.</p><span class="q">❓ ishsizlar va ish haqi mahsulotlarida eng qisqa muddat (hozircha 3 oy deb olindi)</span></div></div>
+      <div class="note"><span class="n">2</span><div><h3>Natija</h3><p>Differensial to'lovda oylik to'lov har oy kamayadi. Shuning uchun bitta "oylik to'lov" emas, birinchi va oxirgi to'lov ko'rsatiladi. Mijoz eng katta to'lovni oldindan bilib qo'yadi.</p></div></div>
+      <div class="note"><span class="n">3</span><div><h3>To'lov jadvali</h3><p>Har bir oy bo'yicha: asosiy qarz, foiz va jami to'lov. Stavkalar admin paneldan olinadi, shuning uchun o'zgarsa kodga tegish shart emas.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ ARIZA ============ -->
+  <section class="screen" id="ariza">
+    <div class="screen-head">
+      <div class="eyebrow">Sahifa 4 / 4 · ishlaydigan namuna</div>
+      <h2>Onlayn ariza</h2>
+      <p>Vazifasi: iloji boricha kam maydon bilan telefon raqamini olish. Qolgan ma'lumotni xodim qo'ng'iroqda aniqlaydi. "Yuborish" tugmasini bosib, muvaffaqiyat oynasini ko'ring (hech narsa yuborilmaydi).</p>
+    </div>
+
+    <div class="phone"><div class="phone-in">
+      <form class="blk" id="apply" novalidate><span class="mk">1</span>
+        <div class="h" style="font-size:18px">Ariza qoldiring, 30 daqiqada qo'ng'iroq qilamiz</div>
+        <label for="a-name">Ism va familiya<input type="text" id="a-name" autocomplete="name" value="Aziz Karimov"></label>
+        <label for="a-tel">Telefon raqami<input type="tel" id="a-tel" autocomplete="tel" value="+998 90 123-45-67"></label>
+        <label for="a-prod">Mahsulot
+          <select id="a-prod"><option>Guruh kafilligi</option><option selected>Kafillik (ish haqi)</option><option>Kafillik (ishsizlar)</option><option>Avtotransport garovi</option><option>Bilmayman, maslahat kerak</option></select>
+        </label>
+        <div class="row2">
+          <label for="a-sum">Summa<input type="text" id="a-sum" inputmode="numeric" value="10 000 000"></label>
+          <label for="a-term">Muddat, oy<input type="text" id="a-term" inputmode="numeric" value="12"></label>
+        </div>
+        <label class="chk" for="a-ok"><input type="checkbox" id="a-ok" checked><span>Shaxsiy ma'lumotlarimni qayta ishlashga roziman (<u>maxfiylik siyosati</u>)</span></label>
+        <p id="a-err" class="s" style="color:#C0392B" hidden></p>
+        <button class="btn pri" type="submit">Yuborish</button>
+        <span class="s" style="font-size:12px">Ish vaqti: Du–Ju 09:00–18:00. Kechqurun qoldirilgan arizaga ertasi kuni ertalab javob beramiz.</span>
+      </form>
+      <div class="blk" id="apply-ok" hidden><span class="mk">2</span>
+        <div class="okmsg"><strong>Arizangiz qabul qilindi</strong><span>Mutaxassisimiz ish vaqtida 30 daqiqa ichida qo'ng'iroq qiladi. Ariza raqami: <b style="font-family:var(--mono)">A-0142</b></span></div>
+        <button class="btn" type="button" id="apply-back">Formaga qaytish</button>
+      </div>
+    </div></div>
+
+    <div class="notes">
+      <div class="note"><span class="n">1</span><div><h3>Forma</h3><p>Majburiy maydonlar faqat ism, telefon va rozilik. Summa va muddat kalkulyatordan o'zi tushadi. Telefon <span style="font-family:var(--mono)">+998</span> formatida tekshiriladi. Spamdan ko'rinmas himoya qo'yiladi.</p><span class="q">❓ "30 daqiqada" va'dasini bajara olasizmi?</span></div></div>
+      <div class="note"><span class="n">2</span><div><h3>Ariza yuborilgandan keyin</h3><p>Mijoz ariza raqamini ko'radi. Ariza bir vaqtning o'zida uchta joyga tushadi: "SABR MMT ARIZALAR" Telegram guruhiga, <span style="font-family:var(--mono)">sabrmikromoliya@gmail.com</span> pochtasiga va admin paneldagi arizalar ro'yxatiga.</p></div></div>
+      <div class="note"><span class="n">+</span><div><h3>Admin panelda</h3><p>Har bir arizaning holati bor: yangi → qo'ng'iroq qilindi → rasmiylashtirildi yoki rad etildi. Mas'ul xodim va izoh yoziladi. Oy oxirida saytdan nechta ariza kelgani va nechtasi qarzga aylangani ko'rinadi.</p></div></div>
+    </div>
+  </section>
+
+  <section class="next">
+    <div class="eyebrow">Keyingi qadam</div>
+    <h2>Wireframe tasdiqlangandan keyin</h2>
+    <ol>
+      <li>Izohlar bo'yicha fikrlaringiz: nimani qo'shish, olib tashlash yoki joyini almashtirish kerak.</li>
+      <li>❓ belgili savollarga javoblar.</li>
+      <li>Dizayn maketi: brend ranglari va logotip bilan bosh sahifa, telefon va kompyuter ko'rinishida.</li>
+      <li>Laravel'da ishlab chiqish, avval test subdomenida.</li>
+    </ol>
+  </section>
+</div>
+
+<script>
+(function(){
+  var P={
+    guruh:{min:2e6,maxByT:{1:7e6,2:10e6,3:15e6},rateByT:{1:6.1,2:5.5,3:5},tmin:3,tmax:12},
+    ishhaqi:{min:2e6,max:22e6,rate:5,tmin:3,tmax:24},
+    ishsiz:{min:2e6,max:7e6,rate:6,tmin:3,tmax:12},
+    avto:{min:2e6,max:50e6,rate:4,tmin:6,tmax:36}
+  };
+  var $=function(id){return document.getElementById(id)};
+  var fmt=function(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g," ")};
+  var times=1;
+  function cfg(){
+    var p=P[$("c-prod").value];
+    return {min:p.min,max:p.maxByT?p.maxByT[times]:p.max,rate:p.rateByT?p.rateByT[times]:p.rate,tmin:p.tmin,tmax:p.tmax,group:!!p.maxByT};
+  }
+  function setLimits(keep){
+    var c=cfg(),s=$("c-sum"),t=$("c-term");
+    s.min=c.min;s.max=c.max;t.min=c.tmin;t.max=c.tmax;
+    if(!keep){s.value=Math.min(c.max,7e6);t.value=Math.min(c.tmax,12);}
+    if(+s.value>c.max)s.value=c.max;
+    $("c-sum-min").textContent=fmt(c.min);$("c-sum-max").textContent=fmt(c.max);
+    $("c-term-min").textContent=c.tmin+" oy";$("c-term-max").textContent=c.tmax+" oy";
+    $("c-times-wrap").hidden=!c.group;
+    calc();
+  }
+  function calc(){
+    var c=cfg(),S=+$("c-sum").value,n=+$("c-term").value,r=c.rate/100,pr=S/n,rows="",tot=0;
+    $("c-sum-v").textContent=fmt(S)+" so'm";$("c-term-v").textContent=n+" oy";
+    for(var k=1;k<=n;k++){var bal=S-(k-1)*pr,i=bal*r;tot+=i;rows+="<tr><td>"+k+"</td><td>"+fmt(pr)+"</td><td>"+fmt(i)+"</td><td>"+fmt(pr+i)+"</td></tr>";}
+    $("r-rows").innerHTML=rows;
+    $("r-first").textContent=fmt(pr+S*r)+" so'm";
+    $("r-last").textContent=fmt(pr+pr*r);
+    $("r-int").textContent=fmt(tot);
+    $("r-tot").textContent=fmt(S+tot);
+    $("r-rate").textContent=String(c.rate).replace(".",",")+"% oyiga · "+String(+(c.rate*12).toFixed(1)).replace(".",",")+"% yillik";
+  }
+  $("c-prod").addEventListener("change",function(){setLimits(false)});
+  $("c-sum").addEventListener("input",calc);
+  $("c-term").addEventListener("input",calc);
+  document.querySelectorAll(".seg button").forEach(function(b){
+    b.addEventListener("click",function(){
+      times=+b.dataset.t;
+      document.querySelectorAll(".seg button").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+      setLimits(true);
+    });
+  });
+  setLimits(false);
+
+  $("apply").addEventListener("submit",function(e){
+    e.preventDefault();
+    var err=[],tel=$("a-tel").value.replace(/\D/g,"");
+    if(!$("a-name").value.trim())err.push("Ismingizni yozing.");
+    if(!/^998\d{9}$/.test(tel))err.push("Telefon raqamini +998 XX XXX-XX-XX shaklida yozing.");
+    if(!$("a-ok").checked)err.push("Davom etish uchun rozilik belgisini qo'ying.");
+    $("a-err").textContent=err.join(" ");$("a-err").hidden=!err.length;
+    if(err.length)return;
+    $("apply").hidden=true;$("apply-ok").hidden=false;
+  });
+  $("apply-back").addEventListener("click",function(){$("apply").hidden=false;$("apply-ok").hidden=true;});
+})();
+</script>
