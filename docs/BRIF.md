@@ -187,7 +187,7 @@ Oqibatlari:
 - [ ] Ofis, jamoa rasmlari (professional suratga olish tavsiya etiladi)
 - [ ] Tashkilot tarixi, qisqa ma'lumot, raqamlar (yillar, mijozlar soni)
 - [x] Domen: `sabrmmt.uz` — mavjud
-- [x] Hosting: Eskiz (Plesk), 12-bo'limga qarang
+- [x] Hosting: Eskiz (Plesk), 11-bo'limga qarang
 - [ ] SSL sertifikatini yoqish (Let's Encrypt, bepul)
 - [ ] Yoqqan 2–3 ta sayt namunasi
 - [ ] Loyiha bo'yicha qaror qabul qiluvchi shaxs
