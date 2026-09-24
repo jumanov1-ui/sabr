@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<title>Bosh sahifa, telefon</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&amp;family=Golos+Text:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;color:#0E1B45;background:#FFFFFF}
+a{color:#1E3399}a:hover{color:#0B4A8A}
+input[type=range]{accent-color:#1E3399}
+</style>
+</helmet>
+<div style="width: 390px; height: 3900px; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; font-family: 'Golos Text', system-ui, sans-serif; color: #0E1B45;">
+
+  <!-- header -->
+  <header style="padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #D5E3F0;">
+    <a href="#" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: #1E3399;">
+      <img src="/_blob/7caa5b564d8d592edcf2643d89f4e6d6" alt="" style="height: 40px; width: auto;">
+      <span style="display: flex; flex-direction: column; line-height: 1.05;">
+        <span style="font-family: 'Times New Roman', Georgia, serif; font-size: 22px; font-weight: 700; letter-spacing: 0.08em;">SABR</span>
+        <span style="font-size: 8px; font-weight: 600; letter-spacing: 0.1em; color: #0B4A8A;">MIKROMOLIYA TASHKILOTI</span>
+      </span>
+    </a>
+    <div style="display: flex; gap: 6px; align-items: center;">
+      <a href="#" aria-label="Qo'ng'iroq qilish" style="width: 44px; height: 44px; border-radius: 12px; background: #EEF6FC; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E3399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></a>
+      <button type="button" aria-label="Menyu" style="width: 44px; height: 44px; border-radius: 12px; background: #0E1B45; border: 0; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section style="position: relative; background: #EEF6FC; padding: 28px 16px 32px; display: flex; flex-direction: column; gap: 18px; overflow: hidden;">
+    <img src="/_blob/7caa5b564d8d592edcf2643d89f4e6d6" alt="" style="position: absolute; right: -40px; top: -10px; height: 220px; opacity: 0.12;">
+    <span style="position: relative; align-self: flex-start; font-size: 12px; font-weight: 600; color: #0B4A8A; background: #FFFFFF; border: 1px solid #C7DBEF; padding: 5px 10px; border-radius: 999px;">Markaziy bank litsenziyasi № 3</span>
+    <h1 style="position: relative; margin: 0; font-family: 'Unbounded', 'Golos Text', sans-serif; font-weight: 700; font-size: 29px; line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance;">Samarqandda 2007-yildan beri ishonchli mikroqarz</h1>
+    <p style="position: relative; margin: 0; font-size: 16px; line-height: 1.5; color: #3A4A6E;">Ariza uchun faqat pasport. Komissiya va yashirin to'lovlar yo'q.</p>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 10px;">
+      <a href="#" style="background: #1E3399; color: #FFFFFF; font-weight: 700; font-size: 16px; padding: 15px; border-radius: 12px; text-align: center; text-decoration: none;">Ariza qoldirish</a>
+      <a href="#" style="background: #FFFFFF; color: #1E3399; font-weight: 700; font-size: 16px; padding: 13px; border-radius: 12px; border: 2px solid #1E3399; text-align: center; text-decoration: none;">+998 66 233-71-87</a>
+    </div>
+  </section>
+
+  <!-- calculator -->
+  <section style="padding: 28px 16px; display: flex; flex-direction: column; gap: 18px; border-bottom: 1px solid #D5E3F0;">
+    <h2 style="margin: 0; font-family: 'Unbounded', sans-serif; font-size: 21px; font-weight: 700;">Qarzni hisoblang</h2>
+    <label for="m-prod" style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #3A4A6E;">Qarz turi
+      <select id="m-prod" value="{{prod}}" onChange="{{onProd}}" style="font: inherit; font-size: 16px; font-weight: 600; color: #0E1B45; padding: 12px; border: 1.5px solid #C7DBEF; border-radius: 10px; background: #FFFFFF; min-height: 48px;">
+        <option value="guruh">Guruh kafilligi</option>
+        <option value="ishhaqi">Kafillik (ish haqi)</option>
+        <option value="ishsiz">Kafillik (ishsizlar)</option>
+        <option value="avto">Avtotransport garovi</option>
+      </select>
+    </label>
+    <sc-if value="{{showTimes}}" hint-placeholder-val="{{true}}">
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; background: #EEF6FC; padding: 4px; border-radius: 10px;">
+        <sc-for list="{{times}}" as="t" hint-placeholder-count="3">
+          <button type="button" onClick="{{t.pick}}" style="{{t.style}}">{{t.label}}</button>
+        </sc-for>
+      </div>
+    </sc-if>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <label for="m-sum" style="font-size: 14px; font-weight: 600; color: #3A4A6E;">Summa</label>
+        <span style="font-family: 'Unbounded', sans-serif; font-size: 17px; font-weight: 500; font-variant-numeric: tabular-nums;">{{sumTxt}} so'm</span>
+      </div>
+      <input id="m-sum" type="range" min="{{sumMin}}" max="{{sumMax}}" step="500000" value="{{sum}}" onChange="{{onSum}}" style="width: 100%; height: 32px;">
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <label for="m-term" style="font-size: 14px; font-weight: 600; color: #3A4A6E;">Muddat</label>
+        <span style="font-family: 'Unbounded', sans-serif; font-size: 17px; font-weight: 500;">{{term}} oy</span>
+      </div>
+      <input id="m-term" type="range" min="{{termMin}}" max="{{termMax}}" step="1" value="{{term}}" onChange="{{onTerm}}" style="width: 100%; height: 32px;">
+    </div>
+    <div style="background: #0E1B45; color: #FFFFFF; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px;">
+      <span style="font-size: 14px; color: #C6D6EE;">Birinchi oylik to'lov</span>
+      <span style="font-family: 'Unbounded', sans-serif; font-size: 28px; font-weight: 700; color: #FFE21A; font-variant-numeric: tabular-nums;">{{first}} so'm</span>
+      <div style="display: flex; justify-content: space-between; font-size: 14px; color: #C6D6EE; font-variant-numeric: tabular-nums;"><span>Oxirgi to'lov</span><span style="color: #FFFFFF; font-weight: 600;">{{last}} so'm</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 14px; color: #C6D6EE; font-variant-numeric: tabular-nums;"><span>Jami foiz</span><span style="color: #FFFFFF; font-weight: 600;">{{interest}} so'm</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 14px; color: #C6D6EE;"><span>Stavka</span><span style="color: #FFFFFF; font-weight: 600;">{{rateTxt}}</span></div>
+    </div>
+    <a href="#" style="background: #FFE21A; color: #0E1B45; font-weight: 700; font-size: 16px; padding: 15px; border-radius: 12px; text-align: center; text-decoration: none;">Shu shartlar bilan ariza qoldirish</a>
+  </section>
+
+  <!-- facts -->
+  <section style="padding: 28px 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 16px; border-bottom: 1px solid #D5E3F0;">
+    <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-family: 'Unbounded', sans-serif; font-size: 28px; font-weight: 700; color: #1E3399;">№ 3</span><span style="font-size: 14px; color: #3A4A6E; line-height: 1.4;">Markaziy bank litsenziyasi</span></div>
+    <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-family: 'Unbounded', sans-serif; font-size: 28px; font-weight: 700; color: #1E3399;">2007</span><span style="font-size: 14px; color: #3A4A6E; line-height: 1.4;">yildan beri faoliyatda</span></div>
+    <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-family: 'Unbounded', sans-serif; font-size: 28px; font-weight: 700; color: #1E3399;">0 so'm</span><span style="font-size: 14px; color: #3A4A6E; line-height: 1.4;">komissiya</span></div>
+    <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-family: 'Unbounded', sans-serif; font-size: 28px; font-weight: 700; color: #1E3399;">1 hujjat</span><span style="font-size: 14px; color: #3A4A6E; line-height: 1.4;">ariza uchun faqat pasport</span></div>
+  </section>
+
+  <!-- products -->
+  <section style="padding: 32px 16px; display: flex; flex-direction: column; gap: 16px;">
+    <h2 style="margin: 0; font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 700;">Qarz turlari</h2>
+    <sc-for list="{{cards}}" as="c" hint-placeholder-count="4">
+      <article style="border: 1px solid #D5E3F0; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px;">
+          <h3 style="margin: 0; font-size: 18px; font-weight: 700;">{{c.name}}</h3>
+          <span style="font-family: 'Unbounded', sans-serif; font-size: 15px; font-weight: 700; color: #1E3399; white-space: nowrap;">{{c.rate}}</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; color: #5A6A8C; line-height: 1.45;">{{c.who}}</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 13px; font-weight: 600;">
+          <span style="background: #EEF6FC; padding: 5px 10px; border-radius: 999px;">{{c.sum}}</span>
+          <span style="background: #EEF6FC; padding: 5px 10px; border-radius: 999px;">{{c.term}}</span>
+        </div>
+        <a href="#" style="font-weight: 700; font-size: 15px; text-decoration: none;">Batafsil →</a>
+      </article>
+    </sc-for>
+  </section>
+
+  <!-- steps -->
+  <section style="background: #0E1B45; color: #FFFFFF; padding: 32px 16px; display: flex; flex-direction: column; gap: 22px;">
+    <h2 style="margin: 0; font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 700;">Qarz qanday olinadi</h2>
+    <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 20px;">
+      <li style="display: grid; grid-template-columns: 40px 1fr; gap: 12px;"><span style="width: 40px; height: 40px; border-radius: 50%; background: #FFE21A; color: #0E1B45; font-family: 'Unbounded', sans-serif; font-weight: 700; display: flex; align-items: center; justify-content: center;">1</span><span style="display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 700; font-size: 17px;">Ariza qoldiring</span><span style="font-size: 14px; color: #C6D6EE; line-height: 1.45;">Saytda yoki telefon orqali</span></span></li>
+      <li style="display: grid; grid-template-columns: 40px 1fr; gap: 12px;"><span style="width: 40px; height: 40px; border-radius: 50%; background: #FFE21A; color: #0E1B45; font-family: 'Unbounded', sans-serif; font-weight: 700; display: flex; align-items: center; justify-content: center;">2</span><span style="display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 700; font-size: 17px;">Mutaxassis bog'lanadi</span><span style="font-size: 14px; color: #C6D6EE; line-height: 1.45;">Mos qarz turini tanlab, shartlarni tushuntiradi</span></span></li>
+      <li style="display: grid; grid-template-columns: 40px 1fr; gap: 12px;"><span style="width: 40px; height: 40px; border-radius: 50%; background: #FFE21A; color: #0E1B45; font-family: 'Unbounded', sans-serif; font-weight: 700; display: flex; align-items: center; justify-content: center;">3</span><span style="display: flex; flex-direction: column; gap: 4px;"><span style="font-weight: 700; font-size: 17px;">Ofisda rasmiylashtiring</span><span style="font-size: 14px; color: #C6D6EE; line-height: 1.45;">Pasport bilan kelib, pulni olasiz</span></span></li>
+    </ol>
+  </section>
+
+  <!-- contact -->
+  <section style="flex-grow: 1; padding: 32px 16px; display: flex; flex-direction: column; gap: 16px;">
+    <h2 style="margin: 0; font-family: 'Unbounded', sans-serif; font-size: 24px; font-weight: 700;">Ofisimizga keling</h2>
+    <div style="border-radius: 16px; background: #DCEBF7; height: 180px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+      <div style="position: absolute; inset: 0; background-image: linear-gradient(#C9DDF0 1px, transparent 1px), linear-gradient(90deg, #C9DDF0 1px, transparent 1px); background-size: 40px 40px;"></div>
+      <svg style="position: relative;" width="40" height="40" viewBox="0 0 24 24" fill="#1E3399" stroke="#FFFFFF" stroke-width="1.5"><path d="M12 22s-7.5-6.5-7.5-12.2A7.5 7.5 0 0 1 19.5 9.8C19.5 15.5 12 22 12 22z"></path><circle cx="12" cy="9.8" r="2.6" fill="#FFE21A"></circle></svg>
+    </div>
+    <dl style="margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15px;">
+      <div style="display: flex; flex-direction: column; gap: 2px;"><dt style="color: #5A6A8C; font-size: 13px;">Manzil</dt><dd style="margin: 0; font-weight: 600;">Samarqand shahri, A. Bahodirxon ko'chasi, 2A-uy</dd></div>
+      <div style="display: flex; flex-direction: column; gap: 2px;"><dt style="color: #5A6A8C; font-size: 13px;">Ish vaqti</dt><dd style="margin: 0; font-weight: 600;">Du–Ju 09:00–18:00, tushlik 13:00–14:00</dd></div>
+      <div style="display: flex; flex-direction: column; gap: 2px;"><dt style="color: #5A6A8C; font-size: 13px;">Telefon</dt><dd style="margin: 0; font-weight: 700; font-size: 18px;">+998 66 233-71-87</dd></div>
+    </dl>
+  </section>
+
+  <!-- footer -->
+  <footer style="background: #0E1B45; color: #C6D6EE; padding: 28px 16px; display: flex; flex-direction: column; gap: 8px; font-size: 13px; line-height: 1.55;">
+    <span style="color: #FFFFFF; font-weight: 700; font-size: 15px;">"SABR MIKROMOLIYA TASHKILOTI" MChJ</span>
+    <span>STIR 300066954</span>
+    <span>Markaziy bank litsenziyasi № 3, reyestrga kiritilgan: 24.08.2007</span>
+    <span style="display: flex; gap: 16px;"><a href="#" style="color: #C6D6EE;">Litsenziya</a><a href="#" style="color: #C6D6EE;">Maxfiylik siyosati</a></span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":3900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { prod: 'guruh', times: 1, sum: 7000000, term: 12 };
+  }
+  cfg(prod, times) {
+    var P = {
+      guruh: { min: 2000000, max: [7000000, 10000000, 15000000][times - 1], rate: [6.1, 5.5, 5][times - 1], tmin: 3, tmax: 12 },
+      ishhaqi: { min: 2000000, max: 22000000, rate: 5, tmin: 3, tmax: 24 },
+      ishsiz: { min: 2000000, max: 7000000, rate: 6, tmin: 3, tmax: 12 },
+      avto: { min: 2000000, max: 50000000, rate: 4, tmin: 6, tmax: 36 }
+    };
+    return P[prod];
+  }
+  fmt(n) { return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+  clamp(prod, times, sum, term) {
+    var c = this.cfg(prod, times);
+    return { prod: prod, times: times, sum: Math.min(c.max, Math.max(c.min, sum)), term: Math.min(c.tmax, Math.max(c.tmin, term)) };
+  }
+  renderVals() {
+    var s = this.state, self = this, c = this.cfg(s.prod, s.times);
+    var S = s.sum, n = s.term, r = c.rate / 100, pr = S / n;
+    var seg = function (on) {
+      return 'font: inherit; font-size: 14px; font-weight: 600; padding: 8px; border-radius: 7px; border: 0; cursor: pointer; min-height: 44px; ' +
+        (on ? 'background: #FFFFFF; color: #1E3399; box-shadow: 0 1px 3px rgba(14,27,69,0.15);' : 'background: transparent; color: #3A4A6E;');
+    };
+    var rateStr = function (x) { return String(x).replace('.', ','); };
+    return {
+      prod: s.prod,
+      onProd: function (e) { self.setState(self.clamp(e.target.value, s.times, s.sum, s.term)); },
+      showTimes: s.prod === 'guruh',
+      times: [1, 2, 3].map(function (t) {
+        return { label: t + '-marta', style: seg(t === s.times), pick: function () { self.setState(self.clamp(s.prod, t, s.sum, s.term)); } };
+      }),
+      sum: S, sumMin: c.min, sumMax: c.max, term: n, termMin: c.tmin, termMax: c.tmax,
+      sumTxt: this.fmt(S),
+      onSum: function (e) { self.setState({ sum: +e.target.value }); },
+      onTerm: function (e) { self.setState({ term: +e.target.value }); },
+      first: this.fmt(pr + S * r),
+      last: this.fmt(pr + pr * r),
+      interest: this.fmt(S * r * (n + 1) / 2),
+      rateTxt: 'oyiga ' + rateStr(c.rate) + '%',
+      cards: [
+        { name: 'Guruh kafilligi', who: '3–7 kishilik guruh uchun. Har safar limit oshadi', rate: 'oyiga 5–6,1%', sum: '2–15 mln', term: '3–12 oy' },
+        { name: 'Kafillik (ish haqi)', who: 'Rasmiy ish haqi oluvchilar uchun', rate: 'oyiga 5%', sum: '2–22 mln', term: '24 oygacha' },
+        { name: 'Kafillik (ishsizlar)', who: 'Rasmiy ishi yo’qlar uchun, 2 ta kafil bilan', rate: 'oyiga 6%', sum: '2–7 mln', term: '12 oygacha' },
+        { name: 'Avtotransport garovi', who: 'Avtomobil garovi ostida, bahoning 50% igacha', rate: 'oyiga 4%', sum: '2–50 mln', term: '6–36 oy' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
