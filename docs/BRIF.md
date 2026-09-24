@@ -1,6 +1,6 @@
 # "Sabr mikromoliya tashkiloti" MCHJ — veb-sayt loyihasi brifi
 
-> Holati: **qoralama (v0.2)**. ❓ belgisi bilan belgilangan joylar tasdiqlanishi kerak.
+> Holati: **qoralama (v0.3)**. ❓ belgisi bilan belgilangan joylar tasdiqlanishi kerak.
 
 ---
 
@@ -41,7 +41,7 @@ Takroriy mijozlar uchun limit va stavka yaxshilanib boradi.
 
 Guruh a'zolari: **3 kishidan 7 kishigacha**.
 
-❓ Muddati?
+Muddati: **3 oydan 12 oygacha**.
 
 ### 3.2. Kafillik (ishsizlar uchun)
 | Summa | Yillik stavka | Oylik stavka | Muddat | Talab |
@@ -56,7 +56,7 @@ Guruh a'zolari: **3 kishidan 7 kishigacha**.
 ### 3.4. Garov (avtotransport)
 | Summa | Yillik stavka | Oylik stavka | Muddat |
 |---|---|---|---|
-| 2 000 000 – 50 000 000 so'm | 48% | 4% | ❓ |
+| 2 000 000 – 50 000 000 so'm | 48% | 4% | 6 oydan 36 oygacha |
 
 Garov qoidasi: qarz summasi avtomobil baholangan qiymatining **50%** idan oshmaydi
 (masalan, avtomobil 50 000 000 so'mga baholansa → 25 000 000 so'mgacha qarz). ✅ Tasdiqlangan.
@@ -68,9 +68,8 @@ Qo'shimcha xarajatlar (mijoz hisobidan): **notarius** va **sug'urta**.
   hisoblanadi. Shuning uchun birinchi to'lov eng katta, keyingilari kamayib boradi.
 - **Yashirin to'lovlar yo'q:** komissiya va boshqa to'lovlar olinmaydi. Faqat garovli qarzda
   notarius va sug'urta xarajati bor. Bu saytda asosiy afzallik sifatida ko'rsatiladi.
-- **Minimal hujjatlar** — bu ham afzallik sifatida ko'rsatiladi.
-  ❓ Har bir mahsulot uchun aniq ro'yxat kerak (masalan, pasport; ish haqi mahsulotida — ish joyidan
-  ma'lumotnoma; garovda — avtomobil texpasporti).
+- **Minimal hujjatlar** — bu ham afzallik sifatida ko'rsatiladi. Ariza uchun **faqat pasport** kifoya;
+  ko'rib chiqish jarayonida qo'shimcha hujjatlar so'ralishi mumkin (saytda shunday yoziladi).
 - ❓ Foiz oyma-oy hisoblanadimi yoki kunlik (oydagi kunlar soniga qarab)?
 
 ### 3.6. Kalkulyator hisob-kitobi (tekshirish uchun namuna)
@@ -179,24 +178,55 @@ Oqibatlari:
 
 - [ ] Litsenziya va yuridik hujjatlar (PDF) — va'da qilingan
 - [ ] Ofis manzili, mo'ljal, ish vaqti, telefonlar, Telegram
-- [ ] Guruh kafilligi va avto garovning muddatlari
+- [x] Muddatlar: guruh kafilligi 3–12 oy, avto garov 6–36 oy
 - [x] To'lov turi — differensial; qo'shimcha to'lovlar — faqat garovda notarius va sug'urta
-- [ ] Har bir mahsulot uchun hujjatlar ro'yxati
+- [x] Hujjatlar: boshlanishida pasport, keyin qo'shimcha so'ralishi mumkin
 - [ ] Namunaviy to'lov jadvalini 1C bilan solishtirish (3.6-bo'lim)
 - [ ] Arizalar uchun email va Telegram guruhi
 - [ ] Logotipning vektor varianti
 - [ ] Ofis, jamoa rasmlari (professional suratga olish tavsiya etiladi)
 - [ ] Tashkilot tarixi, qisqa ma'lumot, raqamlar (yillar, mijozlar soni)
 - [x] Domen: `sabrmmt.uz` — mavjud
-- [ ] Hosting ma'lumotlari: provayder va tarif (PHP hosting / VPS)? Texnologiya tanlovi shunga bog'liq ❓
+- [x] Hosting: Eskiz (Plesk), 12-bo'limga qarang
+- [ ] SSL sertifikatini yoqish (Let's Encrypt, bepul)
 - [ ] Yoqqan 2–3 ta sayt namunasi
 - [ ] Loyiha bo'yicha qaror qabul qiluvchi shaxs
 
-## 11. Keyingi qadamlar
+## 11. Hosting va texnologiya qarori
+
+### Mavjud hosting
+| | |
+|---|---|
+| **Provayder** | Eskiz, Plesk boshqaruv paneli |
+| **Imkoniyatlar** | PHP 8.5, ma'lumotlar bazasi (MySQL/MariaDB), Git, PHP Composer, Node.js, cron (vazifalar rejalashtiruvchisi), Laravel va WordPress toolkit, JetBackup (zaxira nusxa) |
+| **Hozirgi holat** | Sayt bo'sh (10 MB); SSL sertifikati to'liq sozlanmagan |
+
+### Tanlov: **Laravel (PHP) + MySQL + Filament admin panel**
+
+| Mezon | Laravel | WordPress |
+|---|---|---|
+| Hostingda ishlaydimi | ✅ Plesk'da Laravel toolkit bor | ✅ |
+| 3 til | ✅ o'rnatilgan | Plagin orqali |
+| Kalkulyator, ariza, Telegram bot | ✅ o'z kodimiz, to'liq nazorat | Plaginlarga bog'liq |
+| Xavfsizlik (moliya tashkiloti) | ✅ ortiqcha plaginlarsiz, kichik hujum yuzasi | ⚠️ Plaginlar — eng ko'p buziladigan joy |
+| 2–3-bosqichlar (kabinet, to'lov, ichki hisobotlar) | ✅ Shu loyihaning davomi bo'ladi | ❌ Qaytadan yozishga to'g'ri keladi |
+| Kontentni dasturchisiz o'zgartirish | ✅ Filament admin panel | ✅ |
+
+**Nega Laravel:** 1-bosqich tez chiqadi, 2- va 3-bosqichlar (to'lov, xodimlar paneli, bonus va
+prosrochka hisobotlari) shu poydevorda davom etadi — hech narsa qayta yozilmaydi.
+
+### Ishlash tartibi
+- Kod **GitHub** (`jumanov1-ui/sabr`) da saqlanadi → Plesk'dagi **Git** orqali hostingga yuklanadi.
+- Avval **test manzil** (masalan, `test.sabrmmt.uz` subdomeni) → tasdiqlangandan keyin asosiy domen.
+- **SSL** (Let's Encrypt) majburiy — saytda shaxsiy ma'lumotlar qabul qilinadi.
+- **Zaxira nusxa**: JetBackup orqali har kuni.
+- Telegram xabarlari va email **cron / navbat** orqali yuboriladi.
+
+## 12. Keyingi qadamlar
 
 1. Ushbu brifdagi ❓ savollarga javob berish va brifni tasdiqlash
 2. Wireframe — sahifalarning oddiy sxemasi
 3. Dizayn maket (bosh sahifa + bitta mahsulot sahifasi) → tasdiqlash
-4. Texnologiyani tanlash va ishlab chiqish
+4. Ishlab chiqish (Laravel) — test subdomenida
 5. Matnlarni 3 tilga tayyorlash
 6. Test, ishga tushirish, Google/Yandex'da ro'yxatdan o'tish
