@@ -1,6 +1,6 @@
 # "Sabr mikromoliya tashkiloti" MCHJ — veb-sayt loyihasi brifi
 
-> Holati: **qoralama (v0.1)**. ❓ belgisi bilan belgilangan joylar tasdiqlanishi kerak.
+> Holati: **qoralama (v0.2)**. ❓ belgisi bilan belgilangan joylar tasdiqlanishi kerak.
 
 ---
 
@@ -11,7 +11,8 @@
 | **Nomi** | "Sabr mikromoliya tashkiloti" MCHJ |
 | **Faoliyati** | Mikromoliya: jismoniy shaxslarga mikroqarzlar |
 | **Joylashuvi** | Samarqand shahri, bitta ofis (filiallar yo'q) |
-| **Hisob dasturi** | 1C |
+| **Hisob dasturi** | 1C (ofisdagi ichki serverda) |
+| **Domen va hosting** | `sabrmmt.uz` — mavjud |
 | **Sayt tillari** | O'zbek (lotin) — asosiy, rus, ingliz |
 
 ## 2. Loyiha maqsadlari va bosqichlari
@@ -19,7 +20,7 @@
 | Bosqich | Maqsad | Tarkibi |
 |---|---|---|
 | **1. Ommaviy sayt (MVP)** | Ishonch + mijoz jalb qilish | Bosh sahifa, biz haqimizda, litsenziya, mahsulotlar, kredit kalkulyatori, onlayn ariza, aloqa va xarita, FAQ |
-| **2. Mijoz xizmatlari** | Onlayn xizmat ko'rsatish | Shaxsiy kabinet (qoldiq, to'lov jadvali), onlayn to'lov (Payme / Click / Uzum), 1C bilan integratsiya |
+| **2. Mijoz xizmatlari** | Onlayn xizmat ko'rsatish | Onlayn to'lov (Payme / Click / Uzum); keyinroq — shaxsiy kabinet (qoldiq, to'lov jadvali) va 1C bilan integratsiya |
 | **3. Ichki tizim** | Hisobotlarni avtomatlashtirish | Xodimlar paneli: portfel, prosrochka, 180+ kun, bonuslar (K1/K2/K3), SMS hisobotlari |
 
 **1-bosqichning muvaffaqiyat mezonlari (taklif):** ❓
@@ -38,12 +39,14 @@ Takroriy mijozlar uchun limit va stavka yaxshilanib boradi.
 | 2-marta | 10 000 000 so'mgacha | 66% | 5,5% |
 | 3-marta | 15 000 000 so'mgacha | 60% | 5% |
 
-❓ Muddati? Guruhda nechta a'zo bo'ladi?
+Guruh a'zolari: **3 kishidan 7 kishigacha**.
+
+❓ Muddati?
 
 ### 3.2. Kafillik (ishsizlar uchun)
 | Summa | Yillik stavka | Oylik stavka | Muddat | Talab |
 |---|---|---|---|---|
-| 2 000 000 – 7 000 000 so'm | 72% | 6% | 12 oygacha | 2 ta kafil + sug'urta |
+| 2 000 000 – 7 000 000 so'm | 72% | 6% | 12 oygacha | 2 ta kafil + sug'urta ❓ (sug'urta xarajatini mijoz to'laydimi?) |
 
 ### 3.3. Kafillik (rasmiy ish haqi oluvchilar uchun)
 | Summa | Yillik stavka | Oylik stavka | Muddat | Talab |
@@ -56,12 +59,34 @@ Takroriy mijozlar uchun limit va stavka yaxshilanib boradi.
 | 2 000 000 – 50 000 000 so'm | 48% | 4% | ❓ |
 
 Garov qoidasi: qarz summasi avtomobil baholangan qiymatining **50%** idan oshmaydi
-(masalan, avtomobil 50 000 000 so'mga baholansa → 25 000 000 so'mgacha qarz). ❓ Shunday tushundikmi?
+(masalan, avtomobil 50 000 000 so'mga baholansa → 25 000 000 so'mgacha qarz). ✅ Tasdiqlangan.
 
-### 3.5. Kalkulyator uchun aniqlashtirish kerak
-- ❓ To'lov turi: **annuitet** (har oy teng to'lov) yoki **differensial** (asosiy qarz teng, foiz qoldiqqa)?
-- ❓ Qo'shimcha to'lovlar bormi (komissiya, sug'urta summasi)? Mijozga **to'liq qiymat** ko'rsatilishi kerak.
-- ❓ Kerakli hujjatlar ro'yxati (pasport, ish joyidan ma'lumotnoma, avtomobil texpasporti va h.k.).
+Qo'shimcha xarajatlar (mijoz hisobidan): **notarius** va **sug'urta**.
+
+### 3.5. Umumiy shartlar
+- **To'lov turi: differensial** — asosiy qarz har oy teng qismda qaytariladi, foiz esa qolgan qarzga
+  hisoblanadi. Shuning uchun birinchi to'lov eng katta, keyingilari kamayib boradi.
+- **Yashirin to'lovlar yo'q:** komissiya va boshqa to'lovlar olinmaydi. Faqat garovli qarzda
+  notarius va sug'urta xarajati bor. Bu saytda asosiy afzallik sifatida ko'rsatiladi.
+- **Minimal hujjatlar** — bu ham afzallik sifatida ko'rsatiladi.
+  ❓ Har bir mahsulot uchun aniq ro'yxat kerak (masalan, pasport; ish haqi mahsulotida — ish joyidan
+  ma'lumotnoma; garovda — avtomobil texpasporti).
+- ❓ Foiz oyma-oy hisoblanadimi yoki kunlik (oydagi kunlar soniga qarab)?
+
+### 3.6. Kalkulyator hisob-kitobi (tekshirish uchun namuna)
+
+Guruh kafilligi, 1-marta: **7 000 000 so'm, 12 oy, oyiga 6,1%**.
+
+| Oy | Asosiy qarz | Foiz | Oylik to'lov | Qolgan qarz |
+|---|---|---|---|---|
+| 1 | 583 333 | 427 000 | 1 010 333 | 6 416 667 |
+| 2 | 583 333 | 391 417 | 974 750 | 5 833 333 |
+| … | … | … | … | … |
+| 12 | 583 333 | 35 583 | 618 917 | 0 |
+| **Jami** | **7 000 000** | **2 775 500** | **9 775 500** | |
+
+Formula: `foiz = qolgan qarz × oylik stavka`, `asosiy qarz = summa ÷ muddat`.
+❓ Shu summalar 1C'dagi to'lov jadvali bilan bir xil chiqishini tekshirib bering.
 
 ## 4. Sayt tuzilmasi (1-bosqich)
 
@@ -127,7 +152,9 @@ lekin sifatli ko'rinishi uchun vektor fayl kerak. Bo'lmasa, qayta chizib olamiz.
 - **SEO:** "Samarqand kredit", "mikroqarz Samarqand" kabi so'rovlar; Google Maps va Yandex Kartalarda ro'yxatdan o'tish.
 - **2-bosqichga tayyorlik:** 1C bilan keyinchalik ulanish imkoniyati hisobga olinadi.
 
-## 8. Qonuniy talablar (yurist bilan tasdiqlanadi) ❓
+## 8. Qonuniy talablar
+
+Barcha hujjatlar mavjud — PDF shaklida taqdim etiladi.
 
 - Litsenziya raqami va sanasi (Markaziy bank) — saytda ko'rinarli joyda
 - Yillik foiz stavkalari va barcha to'lovlarning oshkor qilinishi
@@ -135,25 +162,33 @@ lekin sifatli ko'rinishi uchun vektor fayl kerak. Bo'lmasa, qayta chizib olamiz.
 - Maxfiylik siyosati va foydalanish shartlari
 - Murojaatlar va shikoyatlar uchun aloqa
 
-## 9. 1C integratsiyasi (2-bosqich uchun ma'lumot yig'ish)
+## 9. 1C integratsiyasi
 
-- ❓ 1C versiyasi va konfiguratsiyasi (masalan, 1C:Предприятие 8.3, qaysi konfiguratsiya)?
-- ❓ 1C kim tomonidan qo'llab-quvvatlanadi (ichki xodim yoki tashqi kompaniya)?
-- ❓ 1C'da HTTP-servis / OData yoqish imkoni bormi?
-- Maqsad: mijoz o'z qoldig'i va to'lov jadvalini ko'radi; to'lovlar 1C'ga avtomatik tushadi.
+**Qaror: hozircha integratsiya qilinmaydi.** 1C ofisdagi ichki serverda ishlaydi va internetga ochilmaydi.
+Bu xavfsizlik jihatidan ham to'g'ri.
+
+Oqibatlari:
+- Sayt 1C'dan mustaqil ishlaydi: arizalar sayt bazasida saqlanadi, xodim ularni 1C'ga qo'lda kiritadi.
+- Shaxsiy kabinet (qoldiq, to'lov jadvali) integratsiyasiz qilib bo'lmaydi, shuning uchun u keyinga qoldiriladi.
+- Onlayn to'lovni (Payme / Click) 1C'siz ham ulash mumkin: to'lov tashkilot hisob raqamiga tushadi.
+- Kelajakda kerak bo'lsa, xavfsiz variant — 1C'dan saytga **bir tomonlama** ma'lumot yuborish
+  (1C internetdan to'g'ridan-to'g'ri ochilmaydi).
+- ❓ 1C versiyasi va konfiguratsiyasi (kelajak uchun ma'lumot sifatida).
 
 ## 10. Hali kerak bo'lgan ma'lumotlar (nazorat ro'yxati)
 
-- [ ] Litsenziya raqami, sanasi, STIR, yuridik manzil
+- [ ] Litsenziya va yuridik hujjatlar (PDF) — va'da qilingan
 - [ ] Ofis manzili, mo'ljal, ish vaqti, telefonlar, Telegram
 - [ ] Guruh kafilligi va avto garovning muddatlari
-- [ ] To'lov turi (annuitet / differensial) va qo'shimcha to'lovlar
+- [x] To'lov turi — differensial; qo'shimcha to'lovlar — faqat garovda notarius va sug'urta
 - [ ] Har bir mahsulot uchun hujjatlar ro'yxati
+- [ ] Namunaviy to'lov jadvalini 1C bilan solishtirish (3.6-bo'lim)
 - [ ] Arizalar uchun email va Telegram guruhi
 - [ ] Logotipning vektor varianti
 - [ ] Ofis, jamoa rasmlari (professional suratga olish tavsiya etiladi)
 - [ ] Tashkilot tarixi, qisqa ma'lumot, raqamlar (yillar, mijozlar soni)
-- [ ] Domen (masalan, `sabr.uz` bandmi?) ❓
+- [x] Domen: `sabrmmt.uz` — mavjud
+- [ ] Hosting ma'lumotlari: provayder va tarif (PHP hosting / VPS)? Texnologiya tanlovi shunga bog'liq ❓
 - [ ] Yoqqan 2–3 ta sayt namunasi
 - [ ] Loyiha bo'yicha qaror qabul qiluvchi shaxs
 
