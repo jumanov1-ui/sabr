@@ -1,1 +1,46 @@
-{"v":3,"createdOnFiles":{"v":1,"at":"2026-09-24T17:46:17Z"},"title":"Sabr sayt dizayni","launch":{"view":"canvas"},"pages":[],"boards":{"Main.dc.html":{"x":0,"y":0,"w":1440,"h":3260,"title":"Bosh sahifa · kompyuter","is_interactive":true},"Mobile.dc.html":{"x":1520,"y":0,"w":390,"h":3900,"title":"Bosh sahifa · telefon","is_interactive":true}},"order":["Main.dc.html","Mobile.dc.html"],"notes":{"head":{"x":0,"y":-300,"text":"sabrmmt.uz · bosh sahifa dizayni v1","kind":"title1","maxW":1910}},"designSystems":[]}
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Main.dc.html": {
+      "h": 3380,
+      "is_interactive": true,
+      "title": "Bosh sahifa · kompyuter",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Mobile.dc.html": {
+      "h": 4300,
+      "is_interactive": true,
+      "title": "Bosh sahifa · telefon",
+      "w": 390,
+      "x": 1520,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-24T17:46:17Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "head": {
+      "kind": "title1",
+      "maxW": 1910,
+      "text": "sabrmmt.uz · bosh sahifa dizayni v2 (glass)",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Mobile.dc.html"
+  ],
+  "pages": [],
+  "title": "Sabr sayt dizayni"
+}
